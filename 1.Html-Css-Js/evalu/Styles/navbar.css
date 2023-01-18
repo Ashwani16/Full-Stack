@@ -1,0 +1,19 @@
+/* Write necessery css for navbar here  */
+#navbar{
+   text-align: center;
+    background-color: black;
+    color: aliceblue;
+    margin: -10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+#navbar>div{
+    display: flex;
+    justify-content: space-around;
+    
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}

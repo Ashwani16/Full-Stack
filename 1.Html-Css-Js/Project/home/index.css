@@ -1,0 +1,13 @@
+#products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+}
+#products>div{
+    text-align: center;
+    padding: 2px;
+    border-radius: 3px;
+}
+#products>div>img{
+    width: 100%;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        
+        img{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" oninput="getdata()" placeholder="enetr movei name to search">
+    <button onclick="hl()">sort High to Low</button>
+    <button onclick="lh()">sort Low to High</button>
+    <div>
+        <label for="">filter by year</label>
+        <input type="" id="filtr" placeholder="enter year">
+        <button onclick="filtr()" >filter</button>
+    </div>
+    <div id="container"></div>
+</body>
+</html>
+<script src="./movie.js"></script>

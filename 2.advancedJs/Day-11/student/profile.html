@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+    <h1><a href="./assignment.html">Assignments</a></h1>
+    <h1><a href="./lecture.html">Lectures</a></h1>
+    <h1><a href="./profile.html">profile</a></h1>
+    <hr><br><hr>
+    <h1 id="name"></h1>
+    <h2>update password</h2>
+    <input type="text" placeholder="enter new pass">
+    <button onclick="update()">submit</button>
+
+</body>
+</html>
+<script>
+    let user=JSON.parse(localStorage.getItem("user"));
+    let h1=document.querySelector('#name')
+    h1.innerText=user.name;
+    function update(){
+        let student=JSON.parse(localStorage.getItem("students"));
+       console.log(student)
+        student.forEach(element => {
+            console.log(element.userName,user.userName)
+            if((element.name==user.name) && (element.password==user.password)){
+                element.password=document.querySelector("input").value
+                console.log("password changed succesfully");
+                localStorage.setItem("students",JSON.stringify(student))
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        h2{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2 >Toatal Amount -<span id="total"></span>      <a href="./pay.html"><button >Pay</button></a></h2>
+    <h1>Cart</h1>
+    <input type="text">
+    <button id="promo">Apply Promo</button>
+    <h3>Toatal items - <span id="items"></span></h3>
+    <select name="price" id="sort" value="sortBy">
+        <option value="asending">Asending</option>
+        <option value="desending">desending</option>
+        <option value="Low">low</option>
+        <option value="High">high</option>
+      </select>
+      <select name="" id="filter" value="Select Role">
+        
+        <option value="mens">men's</option>
+        <option value="Wo-mens">women's</option>
+        
+      </select>
+      
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    let cart=JSON.parse(localStorage.getItem("cart"));
+    document.querySelector("#promo").addEventListener("click",addpromo)
+    document.querySelector("#sort").addEventListener("change",sortBy)
+    document.querySelector("#filter").addEventListener("change",filterBy)
+    
+    function sortBy(){
+        let value=document.querySelector("#sort").value;
+        if(value=="asending"){
+            cart.sort((a,b)=>{
+                if(a.name>b.name) return 1
+                if(a.name<b.name) return -1
+            })
+        }
+        if(value=="desending"){
+            cart.sort((a,b)=>{
+                if(a.name>b.name) return -1
+                if(a.name<b.name) return 1
+            })
+        }
+        if(value=="Low"){
+            cart.sort((a,b)=>{
+                return a.price-b.price
+            })
+        }
+        if(value=="High"){
+            cart.sort((a,b)=>{
+                return b.price-a.price
+            })
+        }
+        display(cart)
+    }
+    function filterBy(){
+        let value=document.querySelector("#filter").value;
+        display(cart.filter((a)=>{
+            return a.brand==value
+        }))
+    }
+    display(cart);
+    function addpromo(){
+        if(document.querySelector("input").value=="masai30"){
+            let total =+document.querySelector("#total").innerText
+            document.querySelector("#total").innerText=Math.floor(total*(70/100)) 
+        }
+    }
+
+    function display(cart){
+        let total=0;
+        document.querySelector("#items").innerText=cart.length
+        document.querySelector("#container").innerHTML=""
+    cart.forEach((element,i) => {
+       
+        let div=document.createElement("div");
+    let img=document.createElement("img");
+    let name=document.createElement("h3");
+    let price=document.createElement("p");
+    let delbutton=document.createElement("button")
+    let incProduct=document.createElement("button")
+    img.src=element.image_url;
+    name.innerText=element.name;
+    price.innerText="Price- "+element.price;
+    total+=+element.price;
+    delbutton.innerText="Delete";
+    delbutton.addEventListener("click",()=>{
+       // total-=+element.price;
+        cart.splice(i,1);
+        localStorage.setItem("cart",JSON.stringify(cart))
+        display(cart);
+    })
+    incProduct.innerText="+";
+    incProduct.addEventListener("click",()=>{
+        cart.push(element);
+        localStorage.setItem("cart",JSON.stringify(cart))
+        display(cart);
+    })
+    div.append(img,name,price,incProduct,delbutton)
+    document.querySelector("#container").append(div)
+    });
+    document.querySelector("#total").innerText=+total;
+    }
+       
+   
+</script>

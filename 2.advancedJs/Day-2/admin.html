@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="name" placeholder="Enter Product Name"><br>
+        <input type="text" id="category" placeholder="Enter Product category"><br>
+        <input type="url" id="image" placeholder="paste link of image"><br>
+        <input type="text" id="price" placeholder="Product price"><br>
+        <select name="" id="gender">
+            <option value="">select Gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select><br>
+        <select name="" id="sold">
+            <option value="false">false</option><br>
+            <option value="true">true</option><br>
+        </select><br>
+        <input type="submit">
+        </form>
+</body>
+</html>
+<script >
+    let product;
+    let form=document.querySelector("form")
+    form.addEventListener("submit",addProduct)
+    function addProduct(){
+        product=JSON.parse(localStorage.getItem("products"))||[]
+        event.preventDefault()
+        let obj=new addToObj(form.name.value,form.category.value,form.image.value,form.price.value,form.gender.value,form.sold.value);
+        product.push(obj);
+        console.log(obj)
+        localStorage.setItem("products",JSON.stringify(product))
+    }
+function addToObj(name,category,image,price,gender,sold){
+    this.name=name;
+    this.category=category;
+    this.image=image;
+    this.price=price;
+    this.gender=gender;
+    this.sold=sold;
+    
+}
+</script>

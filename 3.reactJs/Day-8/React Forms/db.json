@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "name": "",
+      "age": "",
+      "address": "",
+      "department": "full",
+      "salary": "",
+      "ismaried": false,
+      "img": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "age": "",
+      "address": "",
+      "department": "front",
+      "salary": "",
+      "ismaried": false,
+      "img": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "age": "",
+      "address": "",
+      "department": "back",
+      "salary": "",
+      "ismaried": false,
+      "img": "",
+      "id": 3
+    }
+  ]
+}

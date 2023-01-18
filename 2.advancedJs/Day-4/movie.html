@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+            
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="">
+        <option value="">sort by</option>
+        <option value="lh">lh</option>
+        <option value="hl">hl</option>
+    </select>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let arr=[];
+    function crtobj(name,released_Date,imbd){
+        this.name=name;
+        this.released_Date=released_Date;
+        this.poster="https://www.indiewire.com/wp-content/uploads/2019/12/us-1.jpg?w=758";
+        this.imbd=imbd;
+    }
+    let obj1=new crtobj("Avenger","20-09-2022",4.5);
+    arr.push(obj1)
+    let obj2=new crtobj("ravan","20-09-2022",4);
+    arr.push(obj2)
+    let obj3=new crtobj("raja","20-09-2022",5.5);
+    arr.push(obj3)
+    let obj4=new crtobj("Thor","20-09-2022",3.5);
+    arr.push(obj4)
+    let obj5=new crtobj("Avenger 2","20-09-2022",4.5);
+    arr.push(obj5)
+    let obj6=new crtobj("Avenger 3","20-09-2022",4.5);
+    arr.push(obj6)
+    let obj7=new crtobj("Avenger 4","20-09-2022",5);
+    arr.push(obj7)
+    let obj8=new crtobj("Avenger 5","20-09-2022",2);
+    arr.push(obj8)
+    let obj9=new crtobj("Avenger 6" ,"20-09-2022",1);
+    arr.push(obj9)
+    localStorage.setItem("arr",JSON.stringify(arr))
+
+    display(arr);
+    function display(array){
+        document.querySelector("#container").innerHTML=""
+        array.forEach(e => {
+            let div=document.createElement("div");
+            let img=document.createElement("img")
+            img.src=e.poster;
+            let name=document.createElement("h3")
+            name.innerText=e.name;
+            let rel=document.createElement("p")
+            rel.innerText=e.released_Date
+            let imbd=document.createElement("p")
+            imbd.innerText=e.imbd
+            div.append(img,name,rel,imbd)
+            document.querySelector("#container").append(div)
+        });
+document.querySelector("select").addEventListener("change",sortby)
+        function sortby(){
+            let value=document.querySelector("select").value
+            if(value==="lh"){
+                arr.sort((a,b)=>{
+                   return a.imbd-b.imbd
+                })
+            }else if(value==="hl"){
+                arr.sort((b,a)=>{
+                   return a.imbd-b.imbd
+                })
+            }
+            display(arr)
+        }
+    }
+</script>

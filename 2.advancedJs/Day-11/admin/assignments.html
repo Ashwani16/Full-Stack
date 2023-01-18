@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignments</title>
+</head>
+<body>
+    <h1><a href="./studentsList.html">Student List</a></h1>
+    <h1><a href="./assignments.html">Assignments</a></h1>
+    <h1><a href="./lecture.html">Lectures</a></h1>
+    <hr>
+    <h1>create assignment</h1>
+    <form action="">
+        <input type="text" id="name" nameplaceholder="enter assignment name">
+        <input type="date" id="date" placeholder="last date">
+        <input type="submit">
+    </form>
+    <hr>
+    <h1>
+        List
+    </h1>
+    <table>
+        <thead>
+            <th>name</th>
+            <th>Till</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+    let assignments=JSON.parse(localStorage.getItem("assignments"))||[];
+    let tbody=document.querySelector("tbody");
+    document.querySelector("form").addEventListener("submit",addAs)
+    function addAs(e){
+        e.preventDefault()
+        let obj={
+            name:document.querySelector("#name").value,
+            date:document.querySelector("#date").value
+        }
+        assignments=JSON.parse(localStorage.getItem("assignments"))||[];
+        assignments.push(obj)
+        
+        localStorage.setItem("assignments",JSON.stringify(assignments))
+        
+        display(assignments)
+    }
+    display(assignments);
+    function display(assignments){
+        tbody.innerHTML=""
+        assignments.forEach(e => {
+            let tr=document.createElement("tr");
+            let Name=document.createElement("td");
+            let till=document.createElement("td")
+            till.innerText=e.date
+            let del=document.createElement("td")
+            Name.innerText=e.name;
+            del.innerText="Delete";
+            del.addEventListener("click",()=>{
+                console.log("clicked")
+                assignments=assignments.filter((el)=>{
+                    return e.name!=el.name;
+                })
+                localStorage.setItem("assignments",JSON.stringify(assignments))
+                display(assignments);
+            })
+            tr.append(Name,till,del)
+            tbody.append(tr)
+        });
+    }
+</script>

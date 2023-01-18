@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectures</title>
+</head>
+<body>
+    <h1><a href="./assignment.html">Assignments</a></h1>
+    <h1><a href="./lecture.html">Lectures</a></h1>
+    <h1><a href="./profile.html">profile</a></h1>
+    <hr><br><hr>
+    <hr>
+    
+    <h1>
+        List
+    </h1>
+    <table>
+        <thead>
+            <th>name</th>
+            <th>Till</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+    let classes=JSON.parse(localStorage.getItem("classes"))||[];
+    let tbody=document.querySelector("tbody");
+   
+    display(classes);
+    function display(classes){
+        tbody.innerHTML=""
+        classes.forEach(e => {
+            let tr=document.createElement("tr");
+            let Name=document.createElement("td");
+            let till=document.createElement("td")
+            till.innerText=e.date
+            
+            Name.innerText=e.name;
+            
+            tr.append(Name,till)
+            tbody.append(tr)
+        });
+    }
+</script>

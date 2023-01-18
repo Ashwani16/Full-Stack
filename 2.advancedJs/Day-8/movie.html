@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movei</title>
+    <style>
+        
+        input{
+            font-size: 20px;
+            width: 96%;
+            padding: 20px;
+            border: 0px transparent;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        #show{
+            width: 100%;
+            overflow:scroll;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+       
+        ::-webkit-scrollbar {
+         width: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+        background: #888;
+        }   
+    </style>
+</head>
+<body>
+    <div id="con">
+        <input type="text" oninput="debounce(showFunc,1000)" placeholder="enter movie name">
+    <div id="show">
+       
+    </div>
+    </div>
+    <div id="clicked"></div>
+    
+</body>
+</html>
+<script src="./movei.js"></script>

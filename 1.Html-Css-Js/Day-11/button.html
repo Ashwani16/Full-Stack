@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
+        #container>div{
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+         
+    </div>
+    
+</body>
+</html>
+<script>
+    var btnArr = [
+    { name: "Primary", color: "white", bgColor: "blue" },
+    { name: "Secondary", color: "white", bgColor: "grey" },
+    { name: "Danger", color: "white", bgColor: "red" },
+    { name: "Warning", color: "black", bgColor: "yellow" },
+    { name: "Info", color: "white", bgColor: "cyan" },
+    { name: "Light", color: "black", bgColor: "white" },
+    { name: "Success", color: "white", bgColor: "green" },
+    { name: "Dark", color: "white", bgColor: "black" },
+    { name: "Link", color: "blue", bgColor: "white" },
+    { name: "Dark Pink", color: "blue", bgColor: "pink" },
+  ];
+
+  btnArr.forEach(e => {
+    let div=document.createElement("div")
+    div.innerText=e.name
+    div.style.color=e.color
+    div.style.backgroundColor=e.bgColor;
+    document.querySelector("#container").append(div)
+  });
+</script>

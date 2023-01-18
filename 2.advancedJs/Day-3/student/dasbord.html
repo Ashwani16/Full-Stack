@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let students=JSON.parse(localStorage.getItem("students"))||[]
+    let trash=JSON.parse(localStorage.getItem("trash"))||[]
+    display(students)
+
+    function display(arr){
+        let con=document.querySelector("#container")
+        con.innerHTML="";
+        arr.forEach((e,i) => {
+            let div=document.createElement("div");
+            let name=document.createElement("h1");
+            name.innerText=e.name
+            let course=document.createElement("p");
+            course.innerText=e.course
+            let unit=document.createElement("p");
+            unit.innerText=e.unit
+            let image=document.createElement("img");
+            image.src=e.image
+            let batch=document.createElement("p");
+            batch.innerText=e.batch
+            let button=document.createElement("button");
+            button.innerText="remove";
+            button.addEventListener("click",function(){
+                del(e,i)
+            })
+            div.append(image,name,course,unit,batch,button)
+            con.append(div)
+        });
+    }
+    function del(obj,i){
+        trash.push(obj);
+        students.splice(i,1)
+        localStorage.setItem("students",JSON.stringify(students))
+        localStorage.setItem("trash",JSON.stringify(trash))
+        display(students)
+    }
+   
+</script>

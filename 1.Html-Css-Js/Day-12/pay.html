@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+           font-size: 30px;
+        }
+        div>div{
+            width: 30%;
+            
+        }
+        form,input{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <form action="">
+                <label for="name">Name</label><br>
+                <input type="text" placeholder="Enter your name"><br>
+                <label for="card">Card No.</label><br>
+                <input type="text" id="cardNo" placeholder="Enter your card no."><br>
+                <label for="Cvv">CVV</label><br>
+                <input type="text" id="cvv" placeholder="Enter your CVV"><br>
+                <label for="expDate">Exp-Date</label><br>
+                <input type="date" id="expDate" placeholder="Enter your Card's Expiry date"><br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",valid)
+
+    function valid(e){
+        e.preventDefault()
+        let cardNo=document.querySelector("#cardNo").value
+        let cvv=document.querySelector("#cvv").value
+        let expDate=document.querySelector("#expDate").value
+      //  console.log(expDate)
+      if((expDate=="2023-04-01")&&(cardNo=="1234")&&(cvv=="123")){
+        alert("sent OTP on your card rsgistered Mobile no.")
+        window.location.href="./otp.html"
+      }
+      else if((expDate=="")||(cardNo=="")||(cvv=="")){
+        alert("Please fill all the fields-")
+      }else{
+        alert("information is wrong")
+      }
+    }
+</script>

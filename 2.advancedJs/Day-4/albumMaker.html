@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Maker</title>
+</head> 
+<body>
+    <form action="">
+        <input type="link" placeholder="paste image link" id="img">
+        <input type="submit">
+    </form>
+    <input value="" type="number" id="counter" placeholder="put decide btw images ">
+    <button>Start Slide show</button>
+</body>
+</html>
+<script>
+    let images=JSON.parse(localStorage.getItem("images"))||[];
+    document.querySelector("form").addEventListener("submit",addToImages)
+    function addToImages(){
+        event.preventDefault()
+        images.push(document.querySelector("#img").value)
+        console.log(images)
+        localStorage.setItem("images",JSON.stringify(images))
+    }
+    document.querySelector("button").addEventListener("click",startSlide)
+    function startSlide(){
+        let counter=document.querySelector("#counter").value
+        if(counter===""){
+            alert("please fill time interval")
+        }else{
+        localStorage.setItem("counter",counter)
+            window.location.href="./slide.html"
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav">
+        
+    </div>
+    <div id="add">
+       <input type="text" id="name" placeholder="name"><input type="text" id="price" placeholder="price"><input type="text" id="rating" placeholder="rating"><input id="description" placeholder="description" type="text"><br>
+        <button onclick="add()">Add Product</button>
+    </div>
+    <div id="showPro"></div>
+    <div id="buttons"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from './nav.js'
+    document.querySelector("#nav").innerHTML=navbar()
+    document.querySelector("#checkOut").addEventListener("click",()=>{
+    console.log("vukh")
+    window.location.href="./checkout.html"
+    })
+</script>
+<script src="./home.js"></script>

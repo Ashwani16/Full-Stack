@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studentsList</title>
+</head>
+<body>
+    <h1><a href="./studentsList.html">Student List</a></h1>
+    <h1><a href="./assignments.html">Assignments</a></h1>
+    <h1><a href="./lecture.html">Lectures</a></h1>
+    <table>
+        <thead>
+            <th>userName</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    let students= JSON.parse(localStorage.getItem("students"))||[];
+    let tbody=document.querySelector("tbody")
+  
+    let display=(students)=>{
+        tbody.innerHTML=""
+        students.forEach(e => {
+            let tr=document.createElement("tr");
+            let userName=document.createElement("td");
+            let del=document.createElement("td")
+            userName.innerText=e.userName;
+            del.innerText="Delete";
+            del.addEventListener("click",()=>{
+                console.log("clicked")
+                let student=students.filter((el)=>{
+                    return e.userName!=el.userName;
+                })
+                localStorage.setItem("students",JSON.stringify(student))
+                display(student);
+            })
+            tr.append(userName,del)
+            tbody.append(tr)
+        });
+    }
+    display(students);
+</script>

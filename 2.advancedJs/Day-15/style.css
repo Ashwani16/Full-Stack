@@ -1,0 +1,76 @@
+#showPro>div{
+    display: flex;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    background-color: black;  
+    margin: -10px;
+    padding: 3px 20px;
+    margin-bottom: 40px;
+
+}
+input{
+    border-radius: 15px;
+    padding: 2px 11px;
+    border: 1px solid rgb(177, 163, 163);
+}
+button:hover{
+    background-color: rgb(41, 85, 180);
+}
+#showPro{
+    margin: 40px 20px;
+}img{
+    width: 70%;
+}
+#showPro h1{
+    margin-top: 0px;
+}
+#showPro>div{
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#showPro>div>div:nth-child(1){
+    width: 50%;
+}
+#showPro>div>div:nth-child(2){
+width: 50%;
+}
+#showPro>div>div:nth-child(3){
+    width: 50%;
+}
+
+#showPro input{
+    width: 50px;
+}
+button{
+    margin: 10px 0px;
+    border-radius: 15px;
+    padding: 2px 11px;
+    color: antiquewhite;
+    background-color: rgb(69, 185, 75);
+    border: 1px solid rgb(177, 163, 163);
+}
+.ac{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#nav h1{
+    color: white;
+    margin: 0px;
+    font-size: larger
+}
+#nav>div{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    gap: 10%;
+}
+#nav>div>div{
+    display: flex;
+    justify-content: space-evenly;
+    gap :30px
+}

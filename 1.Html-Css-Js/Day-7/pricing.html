@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: grey;
+        }
+        h1{
+            width: 55%;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        h1+p{
+            width: 60%;
+            text-align: center;
+            margin: auto;
+        }
+        #container{
+            width: 60%;
+            margin: auto;
+            margin-top: 30px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns:repeat(3,1fr);
+           
+        }
+        #container>div{
+            text-align: center;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        button{
+            margin: 10px;
+            padding: 0px 10px;
+            font-size: large;
+            color: aliceblue;
+            background-color: green;
+            border: 0px;
+            border-radius: 10px;
+
+        }
+        #container>div>h1{
+            color: rgb(144, 207, 18);
+            margin-bottom: 0;
+        }
+        #container>div>h1+p{
+           color: rgb(97, 97, 97);
+        }
+        @media all and (min-width:481px) and (max-width:720px){
+            #container{
+           
+            width: 85%;
+            
+            grid-template-columns:repeat(2,1fr) ;
+            }
+        
+
+        }
+        @media all and (min-width:300px) and (max-width:480px){
+            #container{
+           
+            width: 90%;
+            
+            grid-template-columns:1fr ;
+            }
+         h1{
+            width: 90%;
+            
+         }
+         h1+p{
+            width:90%
+         }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Choose a Plan that right for your busyness</h1>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ernatur optio optio ernatur optioblanditiis animi?</P>
+    <div id="container">
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>Free</h1>
+            <p>Per Month</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium non consequatur temporibus officiis modi dignissimos suscipit libero.
+            </p>
+            <button>start Now</button>
+        </div>
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>Free</h1>
+            <p>Per Month</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium non consequatur temporibus officiis modi dignissimos suscipit libero.
+            </p>
+            <button>start Now</button>
+        </div>
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>Free</h1>
+            <p>Per Month</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium non consequatur temporibus officiis modi dignissimos suscipit libero.
+            </p>
+            <button>start Now</button>
+        </div>
+    </div>
+</body>
+</html>

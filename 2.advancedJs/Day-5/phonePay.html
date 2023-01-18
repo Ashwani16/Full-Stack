@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-Pay</title>
+    <style>
+        #container{
+            padding: 50px;
+            margin:-20px;
+            text-align: center;
+            background-color: aqua;
+            margin-bottom: 20px;
+        }
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"><h1>please Enter passWord to make pament</h1></div>
+    <input type="text" value="" placeholder="Enter Pasword">
+    <button onclick="pay()">Pay</button>
+    
+</body>
+</html>
+<script>
+    function pay(){
+        let pas=document.querySelector("input").value;
+        let con=document.querySelector("#container");
+        let h1=document.createElement("h1");
+        h1.innerText="...Pay-ment Pending";
+        con.innerHTML=""
+        con.style.backgroundColor="orange"
+        con.append(h1)
+
+
+        let promis=new Promise(function(accept,reject){
+            setTimeout(function(){
+                if(pas=="1234"){
+                    accept("succefull")
+                }else{
+                    reject("denide")
+                }
+            },3000)
+        })
+    
+        promis.then(function(res){
+            h1.innerText="Pay-ment "+res;
+        con.innerHTML=""
+        con.style.backgroundColor="green"
+        con.append(h1)
+        })
+        promis.catch(function(e){
+            h1.innerText="Pay-ment "+e;
+        con.innerHTML=""
+        con.style.backgroundColor="red"
+        con.append(h1)
+        })
+                    
+    }
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            background-color: rgb(9, 5, 34);
+            color: aliceblue;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 7px;
+        }
+        #nav>div:nth-child(2){
+            display: flex;
+            gap: 40px;
+            
+            
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>Reebook</div>
+        <div>
+            <div ><p id="men">Men</p> </div>
+            <div ><p id="women">women</p> </div>
+            <div ><p id="cart">Cart</p> </div>
+            <div><a href="./signin.html">login</a></div>
+            <div><a href="./signup.html">signUp</a> </div>
+            <div><a id="logOut" >logOut</a> </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     document.querySelector("#cart").addEventListener("click",carts)
+    document.querySelector("#men").addEventListener("click",mens)
+    document.querySelector("#women").addEventListener("click",womens)
+    document.querySelector("#logOut").addEventListener("click",logOut)
+    function logOut(){
+        localStorage.removeItem("user")
+    }
+    function carts(){
+        let user=JSON.parse(localStorage.getItem("user"))
+        if(user==null){
+            alert("please logIn First")
+        }else{
+            window.location.href="./cart.html"
+           
+        }
+    }
+    function mens(){
+        let user=JSON.parse(localStorage.getItem("user"))
+        if(user==null){
+            alert("please logIn First")
+        }else{
+            window.location.href="./mens.html"
+       
+        }
+    }
+    function womens(){
+        let user=JSON.parse(localStorage.getItem("user"))
+        if(user==null){
+            alert("please logIn First");
+        }else{
+            window.location.href="womens.html"
+        }
+    }
+   
+</script>
+<script>
+    console.log("lh")
+</script>

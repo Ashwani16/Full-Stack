@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+   <h1> Products List</h1>
+   <div id="container"></div>
+</body>
+</html>
+<script>
+    let product=JSON.parse(localStorage.getItem("products"))||[];
+    display(product);
+    function display(array){
+        document.querySelector("#container").innerHTML="";
+        array.forEach(e => {
+            let div=document.createElement("div");
+            let name=document.createElement("p");
+            name.innerText=e.name
+            let image=document.createElement("img");
+            image.src=e.image
+            let remove=document.createElement("button")
+                    remove.innerHTML="remove";
+                    remove.addEventListener("click",()=>{
+                        removePro(e)
+                    })
+            let sold=document.createElement("button")
+            sold.innerText=e.sold;
+            sold.style.backgroundColor="green"
+            if(e.sold){
+                sold.style.backgroundColor="red"
+            }
+            sold.addEventListener("click",()=>{
+                if(e.sold){
+                    e.sold=false
+                }else{
+                    e.sold=true
+                }
+                localStorage.setItem("products",JSON.stringify(array))
+                display(array)
+            })
+            div.append(image,name,sold,remove)
+            document.querySelector("#container").append(div)
+
+            // let name=document.createElement("div");
+            // let name=document.createElement("div");
+        });
+
+    }
+    function removePro(obj){
+        obj.id=true
+        product=product.filter((e)=>{
+            return e.id!=obj.id
+        })
+        localStorage.setItem("products",JSON.stringify(product))
+                display(product)
+
+    }
+</script>

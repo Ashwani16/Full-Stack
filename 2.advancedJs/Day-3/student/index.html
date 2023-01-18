@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div id="nav">
+        
+    </div>
+    <h1>Home Page</h1>
+        <a href="./dasbord.html"><h1>Dashboard</h1></a>
+    
+    <div>
+        <form action="">
+            <input type="text" id="name" placeholder="Enter name"><br>
+            <input type="text" id="course" placeholder="Enter Course"><br>
+            <input type="text" id="unit" placeholder="Enter Unit"><br>
+            <input type="link" id="img" placeholder="paste image link"><br>
+            <input type="text" id="batch" placeholder="Enter your batch"><br>
+            <input type="submit"><br>
+        </form>
+    </div>
+    
+</body>
+</html>
+<script>
+    let students=JSON.parse(localStorage.getItem("students"))||[]
+    let form=document.querySelector("form");
+    form.addEventListener("submit",submit)
+    function submit(){
+        event.preventDefault();
+        let name=form.name.value;
+        let course=form.course.value;
+        let unit=form.unit.value;
+        let image=form.img.value;
+        let batch=form.batch.value;
+        let obj= new crtObj(name,course,unit,image,batch)
+        students.push(obj);
+        checkOc(students)
+        localStorage.setItem("students",JSON.stringify(students) );
+    }
+    function checkOc(arr){
+        let brr={}
+        arr.forEach(e => {
+            //console.log(e.batch)
+            if(brr[e.batch]>=0){
+                brr[e.batch]++;
+            }else{
+                brr[e.batch]=0
+            }
+        });document.querySelector("#nav").innerHTML=""
+        for (const key in brr) {
+            if (Object.hasOwnProperty.call(brr, key)) {
+                const element = brr[key];
+                let batchName=document.createElement("h2");
+                batchName.innerText=key+" - "+element;
+                document.querySelector("#nav").append(batchName)
+            }
+        }
+    }
+    function crtObj(n,c,u,i,b){
+        this.name=n;
+        this.course=c;
+        this.unit=u;
+        this.image=i;
+        this.batch=b;
+    }
+</script>

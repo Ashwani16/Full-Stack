@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <style>
+        #winner{
+           width: 300px;
+           margin: auto;
+        }
+        div{
+            background-color: bisque;
+            margin: 10px;
+            padding: 50px;
+        }
+        #mem{
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            background-color: aliceblue;
+        }
+        #showmem>div{
+            padding: 0px 50px;
+        }
+        #showmem{
+            display: flex;
+            padding: 2px;
+            justify-content: center;
+            background-color: aliceblue;
+        }
+        #roll{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="winner">f</div>
+    <div id="mem">
+       <div id="member-1">f</div>
+       <div id="member-2">f</div>
+       <div id="member-3">f</div>
+    </div>
+    <div id="showmem">
+        <div >mem1</div>
+        <div >mem2</div>
+        <div >mem3</div>
+     </div>
+    
+    <div id="roll">roll</div>
+</body>
+</html>
+<script>
+    document.querySelector("#roll").addEventListener("click",roll)
+
+    function roll(){
+        let winner;
+        let mem1=  Math.floor(Math.random()*(6)+1) 
+        let mem2=  Math.floor(Math.random()*(6)+1)
+        let mem3=  Math.floor(Math.random()*(6)+1)
+       
+        if(mem1>=mem2 && mem1>=mem3){
+            document.querySelector("#member-1").style.backgroundColor="green";
+            winner="winner is mem1"
+            if(mem2>=mem3){
+                document.querySelector("#member-2").style.backgroundColor="orange";
+                document.querySelector("#member-3").style.backgroundColor="red";
+            }else{
+                document.querySelector("#member-2").style.backgroundColor="red";
+                document.querySelector("#member-3").style.backgroundColor="orange";
+            }
+        }else if(mem2>=mem1 && mem2>=mem3){
+            document.querySelector("#member-2").style.backgroundColor="green";
+            winner="winner is mem2"
+            if(mem1>=mem3){
+                document.querySelector("#member-1").style.backgroundColor="orange";
+                document.querySelector("#member-3").style.backgroundColor="red";
+            }else{
+                document.querySelector("#member-1").style.backgroundColor="red";
+                document.querySelector("#member-3").style.backgroundColor="orange";
+            }
+    }else if(mem3>=mem2 && mem3>=mem1){
+            document.querySelector("#member-3").style.backgroundColor="green";
+            winner="winner is mem3"
+            if(mem2>=mem1){
+                document.querySelector("#member-2").style.backgroundColor="orange";
+                document.querySelector("#member-1").style.backgroundColor="red";
+            }else{
+                document.querySelector("#member-2").style.backgroundColor="red";
+                document.querySelector("#member-1").style.backgroundColor="orange";
+            }
+        }
+        if(mem1==mem2 && mem2==mem3){
+            winner="Draw"
+            document.querySelector("#member-3").style.backgroundColor="blue";
+            document.querySelector("#member-1").style.backgroundColor="blue";
+            document.querySelector("#member-2").style.backgroundColor="blue";
+    }
+        document.querySelector("#member-1").innerText=mem1;
+        document.querySelector("#member-2").innerText=mem2;
+        document.querySelector("#member-3").innerText=mem3;
+        document.querySelector("#winner").innerText=winner;
+        document.querySelector("#winner").style.backgroundColor="grey";
+
+   }
+</script>

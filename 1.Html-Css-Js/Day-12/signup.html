@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            
+            width: 30%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+            margin-top: 40px;
+            border-radius: 2%;
+        }
+        label{
+            margin: 20px 10px ;
+        }
+        input{
+            
+            width: 90%;
+            margin: auto;
+            margin-bottom:15px ;
+            border-radius: 10px;
+            padding: 10px;
+            border: solid rgb(209, 210, 211);
+        }
+        div{
+            margin-top: 30px;
+            text-align: center;
+            
+            font-size: larger;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body><h1>Sign-Up</h1>
+    <form action="">
+        <label for="">Full Name</label><br>
+        <input type="text" id="name" placeholder="Enter Your full name"><br>
+        <label for="">E-mail</label><br>
+        <input type="email" id="email" placeholder="Enter Your email"><br>
+        <label for="">Password</label><br>
+        <input type="password" id="pass" placeholder="Enter your Password"><br>
+        <input type="submit">
+    </form><br>
+    <div><a href="./signin.html">Sign-in</a></div>
+     
+
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    form.addEventListener("submit",createId)
+    let arr;
+    if(localStorage.getItem("ids")==null){
+        arr=[];
+    }else{
+        arr=JSON.parse(localStorage.getItem("ids"))
+    }
+    function createId(e){
+        e.preventDefault()
+        let obj={
+            name:form.name.value,
+            email:form.email.value,
+            pass:form.pass.value
+        }
+        if(obj.name=="" || obj.email=="" || obj.pass==""){
+            alert("please fill all fields")
+        }else{
+            arr.push(obj);
+        localStorage.setItem("ids",JSON.stringify(arr));
+        form.innerHTML=""
+        }
+       
+        
+    }
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let obj={}
+   
+    function array(){
+        Object.defineProperty(this,"length",{
+            value:0,
+            enumerable:false,
+            writable:true
+        })
+        this.length=0
+    }
+    array.prototype.push=function(ele){
+       this[this.length]=ele
+        this.length++;
+        return this.length
+
+    }
+    array.prototype.pop=function(){
+        this.length--;
+        delete(this[this.length])
+    }
+    array.prototype.map=function(cbf){
+        let temp=new array();
+        for (const key in this) {
+            if (Object.hasOwnProperty.call(arr, key)) {
+                
+                temp.push(cbf(this[key],key,this))
+                
+            }
+            
+        }
+        return temp;
+    }
+    array.prototype.forEach=function(cbf){
+        for (const key in this) {
+            if (Object.hasOwnProperty.call(arr, key)) {
+                cbf(this[key],key,this)
+            }
+        }
+    }
+    array.prototype.filter=function(cbf){
+        let temp=new array;
+        for (const key in this) {
+            if (Object.hasOwnProperty.call(this, key)) {
+                if(cbf(this[key],key,this)){
+                    temp.push(this[key])
+                }
+            }
+        }
+        return temp;
+    }
+    array.prototype.reduce=function(cbf){
+        let ac=0
+        for (const key in this) {
+            if (Object.hasOwnProperty.call(this, key)) {
+                    ac=cbf(ac,this[key])  
+            }
+        }
+        return ac;
+    }
+    let arr=new array();
+    //console.log(arr);
+    arr.push(7)
+    arr.push(8)
+    arr.push(9)
+    arr.push(1)
+    //console.log(arr);
+    //arr.pop()
+//     console.log(arr);
+//     let ne=arr.map((e)=>{
+//         console.log(e)
+//         return e*e
+//     })
+//     console.log(ne)
+//    arr.forEach((e)=>{
+//     console.log(e*2)
+//    })
+//   let ne=arr.filter((e)=>{
+//     return e%2!=0;
+//   })
+console.log(arr)
+let ac=7
+let ne=arr.reduce((ac,e)=>{
+    return ac+e
+})
+  console.log(ne)
+    
+</script>

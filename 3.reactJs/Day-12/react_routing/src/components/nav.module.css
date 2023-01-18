@@ -1,0 +1,14 @@
+.nav{
+    color:white;
+    display: flex;
+    background-color: black;
+    
+}
+.nav>h1{
+    margin: 0px;
+}
+.logout{
+    padding: 0px;
+    margin:400px
+    
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            width: 80%;
+            margin:auto;
+            gap: 10px;
+            grid-template-columns:repeat(4,1fr) ;
+            grid-template-rows: 70px 300px;
+            grid-template-areas: 
+            "nav nav nav nav"
+            "b1 b2 b3 b4";
+
+        }
+        #container>div{
+            padding: 20px;
+        }
+        #container>div:nth-child(1){
+            background-color: yellow;
+            font-size: 30px;
+            grid-area: nav;
+        }
+        #container>div:nth-child(2){
+            background-color: red;
+            grid-area: b1;
+        }
+        #container>div:nth-child(3){
+            background-color: rgb(31, 238, 42);
+            grid-area: b2;
+        }
+        #container>div:nth-child(4){
+            background-color: rgb(45, 69, 148);
+            grid-area: b3;
+        }
+        #container>div:nth-child(5){
+            background-color: grey;
+            grid-area: b4;
+        }
+        @media all and (min-width:481px) and ( max-width:720px){
+            #container{
+           
+            width: 85%;
+            
+            grid-template-columns:repeat(2,1fr) ;
+            grid-template-rows: 70px 200px 200px;
+            grid-template-areas: 
+            "nav nav"
+            "b1 b3 "
+            "b2 b4";
+
+        }
+        }
+        @media all and (min-width:300px) and ( max-width:480px){
+            #container{
+           
+            width: 90%;
+            
+            grid-template-columns:1fr;
+            grid-template-rows: 70px repeat(4,100px);
+            grid-template-areas: 
+            "nav"
+            "b1"
+            "b4"
+            "b2"
+            "b3";
+
+
+        }
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            Navigation
+        </div>
+        <div>Box1</div>
+        <div>Box2</div>
+        <div>Box3</div>
+        <div>Box4</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="name" placeholder="enter name"><br>
+        <input type="text" id="place" placeholder="enter your place"><br>
+        <input type="text" name="" id="id" placeholder="enter  your id"><br>
+        <input type="submit" name="" id="">
+    </form>
+</body>
+</html>
+<script>
+    let arr=[]
+    let form=document.querySelector("form");
+    form.addEventListener("submit",creatData)
+    function creatData(){
+        event.preventDefault()
+        arr.push(new CF(form.name.value,form.place.value,form.id.value))
+        console.log(arr)
+    }
+    function CF(n,p,i){
+        this.name=n;
+        this.place=p;
+        this.id=i
+    }
+    
+    
+
+</script>

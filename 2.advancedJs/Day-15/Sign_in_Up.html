@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acounts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav">
+      
+    </div>
+    <div class="ac" id="sign-Up">
+        <input type="text" id="user_name" placeholder="enter user name">
+        <input type="password" id="user_pass" placeholder="Create a password">
+        <button id="register" onclick="register()">Sign-Up</button>
+    </div>
+    <div class="ac" id="sign-In">
+        <input type="text" id="SignIn_name" placeholder="enter user name">
+        <input type="password" id="SignIn_pass" placeholder="enter password">
+        <button id="signIn" onclick="signIn()">Sign-In</button>
+    </div>
+    
+</body>
+</html>
+<script type="module">
+    import navbar from './nav.js'
+    document.querySelector("#nav").innerHTML=navbar();
+    document.querySelector("#checkOut").addEventListener("click",()=>{
+    console.log("vukh")
+    window.location.href="./checkout.html"
+})
+</script>
+<script src="./index.js">
+
+</script>

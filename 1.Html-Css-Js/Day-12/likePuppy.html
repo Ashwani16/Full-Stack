@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 45%;
+        }
+        div{
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+        }
+        button{
+            color: rgb(232, 240, 240);
+            background-color: rgb(55, 175, 175);
+            border: 0px;
+            border-radius: 10%;
+            padding: 2px 7px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B900%2C533%5D&w=2000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F03%2F12%2Fpomeranian-white-puppy-921029690-2000.jpg" alt="">
+    <div>
+        <h3>Likes- <span id="likes"></span></h3>
+        <h3>Dislikes- <span id="dis"></span></h3>
+    </div>
+    <button>Like</button>
+    <button>Dislike</button>
+</body>
+</html>
+<script>
+    let likeCount;
+    if(localStorage.getItem("likes")==null){
+        likeCount=0;
+    }else{
+        likeCount=localStorage.getItem("likes")
+    }
+    let dislikeCount;
+    if(localStorage.getItem("dislikes")==null){
+        dislikeCount=0;
+    }else{
+        dislikeCount=localStorage.getItem("dislikes")
+    }
+    document.querySelector("#likes").innerText=likeCount
+    document.querySelector("#dis").innerText=dislikeCount
+    document.querySelector("button").addEventListener("click",addLike)
+    document.querySelector("button+button").addEventListener("click",addDisLike)
+    function addLike(){
+        likeCount++;
+        localStorage.setItem("likes",likeCount)
+        console.log("liked")
+        document.querySelector("#likes").innerText=likeCount
+    }
+    function addDisLike(){
+        dislikeCount++;
+        localStorage.setItem("dislikes",dislikeCount)
+        console.log("disliked")
+        document.querySelector("#dis").innerText=dislikeCount
+
+    }
+</script>

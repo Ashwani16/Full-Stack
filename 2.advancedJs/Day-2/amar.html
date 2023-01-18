@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Amar Kbar Anthoni
+</body>
+</html>
+<script>
+ 
+    let amar={
+        name:"Amar",
+        place:"Goa",
+        skill:"Singer",
+        ShowSkill:function(){
+                this.skill=amar.skill
+        }
+    }
+    let anthony={
+        name:"Anthony",
+        place:"Kasmir",
+        skill:"Magician",
+        ShowSkill:function(){
+            this.skill=anthony.skill
+        }
+    }
+    let akbar={
+        name:"Akbar",
+        place:"Mumbai",
+        skill:"Chef",
+        ShowSkill:function(){
+            this.skill=akbar.skill
+        }
+    }
+    akbar.ShowSkill.call(amar)
+    console.log(amar)
+    
+
+// Akbar is a chef, lives in Mumbai.
+
+// Anthony is a Magician, lives in Kashmir.
+</script>

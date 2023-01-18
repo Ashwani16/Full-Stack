@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide show</title>
+    <style>
+        img{
+            width: 100%;
+        }
+        div{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="game">Make Game</button>
+    <div>
+        
+    </div>
+    
+</body>
+</html>
+<script>
+     let images=JSON.parse(localStorage.getItem("images"))||[];
+     let counter=JSON.parse(localStorage.getItem("counter"))||0;
+     let count=+JSON.parse(localStorage.getItem("count"))||0;
+     let div=document.querySelector("div")
+     let id;
+    document.querySelector("#start").addEventListener("click",start)
+    function start(){
+        
+        pause()
+        count=+JSON.parse(localStorage.getItem("count"))||0
+        let img=document.createElement("img");
+        img.src=images[count];
+        div.innerHTML=""
+        div.append(img);
+       id=setInterval(function(){
+        div.innerHTML=""
+            count++;
+            if(count>=images.length){
+                count=0;
+            }
+            let img=document.createElement("img");
+        img.src=images[count];
+        div.append(img);
+        },+counter*1000
+        )
+    }
+    document.querySelector("#pause").addEventListener("click",pause)
+    function pause(){
+        localStorage.setItem("count",count)
+        clearInterval(id)
+    }
+    document.querySelector("#game").addEventListener("click",function(){
+        counter=.13;
+        start()
+    })
+</script>
