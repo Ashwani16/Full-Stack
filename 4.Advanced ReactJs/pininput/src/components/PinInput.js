@@ -23,7 +23,12 @@ const changeHandler=(e,i)=>{
   
 }
 const copyHandler=(e)=>{
-    console.log(e.target.value)
+    let data=e.clipboardData.getData("Text").split("").filter((e,i)=>i<length)
+    setText(data)
+    ref.current[data.length-1].focus()
+    data.forEach((e,i) => {
+       ref.current[i].value=e 
+    });
 }
   return <div>PinInput<br/>
 {
