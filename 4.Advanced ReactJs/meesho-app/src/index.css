@@ -6,8 +6,84 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.navbar{
 
+  
+}
+.sm{
+  display: flex;
+  width:97%;
+  gap: 20px;
+  margin: auto;
+padding-top: 10px;
+animation: fading 1s forwards;
+position: absolute;
+background-color: azure;
+}
+@keyframes fading {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+.nav2>div:hover, a:hover{
+
+  color: rgb(240, 29, 187);
+}
+.nav2{
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.smd{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  align-items: left;
+  text-align: left;
+  width: 150px;
+   margin: auto;
+
+}
+.flex{
+  display: flex;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.smd >h3{
+  color: rgb(231, 1, 212);
+ 
+}
+.smd >p:hover, a:hover{
+  background-color: rgb(250, 250, 250);
+  border-radius: 7px;
+}
+.pink{
+  color: rgb(240, 29, 187);
+}
+ 
+.sb{
+background-color: aliceblue;
+margin-top: 20px;
+width: 20%;
+height: 400px;
+padding: 10px;
+text-align: left;
+margin-left: 30px;
+}
+.option{
+  text-align: left;
+  padding: 10px;
+  width: 160px;
+}
+.option:hover{
+
+  background-color: rgb(250, 250, 250);
+}
+.filter{
+  padding-top: 10px;
+}
+.pb{
+
 }

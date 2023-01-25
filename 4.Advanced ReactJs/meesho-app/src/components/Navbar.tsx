@@ -7,7 +7,7 @@ import { CgProfile } from 'react-icons/cg';
 import Navbar2 from "./Navbar2";
 
 const Navbar=()=>{
-    return <div  style={{position: "sticky"}}>
+    return <div className="navbar" style={{position: "sticky"}}>
        <Center justifyContent='space-between' >
   <Center width='50%'  >
     <Image height='60px' src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' width='23%'/>
@@ -46,11 +46,11 @@ const Navbar=()=>{
 </Center> 
 <Divider />
 <Navbar2/>
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
         <Link to="/signUp">SinUp</Link>
         <Link to="/products/saree">Product Page</Link>
         <Link to="/product/sarre1">Single Product Page</Link>
-    </div>
+   */} </div> 
 }
 export default Navbar
