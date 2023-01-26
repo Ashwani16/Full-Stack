@@ -5,18 +5,17 @@ const WomenEthnic=()=>{
     return <div className="sm"> 
              <div className="smd" >
                  <h3>All Women Ethnic</h3>
-                 <p>View All</p>
+                 <Link to="/products/allsarees"><p>View All</p></Link>
              </div>
              <div className="smd" >
                  <h3>Sarees</h3>
-                 <Link to="/products/:type"><p>Silk Sarees</p></Link>
-                 
-                  <p>Cotton Silk Sarees</p>
-                  <p>Cotton Sarees</p>
-                 <p>Georgette</p>
-                <p>Chiffon Sarees</p>
-                <p>Satin Sarees</p>
-                <p>Embroiderd</p>
+                 <Link to="/products/allsarees"><p>Silk Sarees</p></Link>
+                 <Link to="/products/allsarees"><p>Cotton Silk Sarees</p></Link>
+                 <Link to="/products/allsarees"><p>Cotton Sarees</p></Link>
+                 <Link to="/products/allsarees">  <p>Georgette</p></Link>
+                 <Link to="/products/allsarees"><p>Chiffon Sarees</p></Link>
+                 <Link to="/products/allsarees"><p>Satin Sarees</p></Link>
+                 <Link to="/products/allsarees">  <p>Embroiderd</p></Link>
             </div>
             <div className="smd" >
                 <h3>Kurtis</h3>

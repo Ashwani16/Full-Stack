@@ -1,0 +1,42 @@
+.single{
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;    border-radius: 3px;
+    background-color: white;
+}
+.single:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.name{
+    font-weight: 600;
+    margin:10px;
+    font-family: Consolas;
+    color: rgb(122, 122, 122);
+}
+.price{
+    font-weight: 700;
+    font-size: large;
+}
+.freedel{
+    padding: 0px 10px;
+    font-size: 10px;
+    border-radius: 25px;
+    background-color: aliceblue;
+}.rating{
+
+    display: flex;
+    margin-top: 12px;
+    font-size: 12px;
+}
+.rating>p{
+    font-weight: 600;
+    padding: 0px 10px;
+    border-radius: 15px;
+    color: white;display: flex;
+    background-color: rgb(44, 216, 136);
+}
+.img{border-radius: 5px;
+    width: 93%;
+    margin:auto;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    height: 200px;
+}

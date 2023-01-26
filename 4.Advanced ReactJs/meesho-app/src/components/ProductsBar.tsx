@@ -1,24 +1,40 @@
-import React from 'react'
+import { Console } from 'console';
+import {useEffect} from 'react'
+import {useDispatch,useSelector} from 'react-redux'
+import { useLocation, useParams } from 'react-router';
+import { Get_Data_from_API } from '../redux/allProducts/action';
 import { OnlyProduct } from './OnlyProduct'
 export type Objprop={
-    image:string;
-    name:string;
-    Price:number;
-    rating:number;
+    delivery:string
+    desc:string
+    id:string
+    img1:string
+    name:string
+    onwards:string
+    price:string
+    quantity:number
+    rating:number
+    reviews:string;
+    size:any
 }
 export const ProductsBar = () => {
-    let arr=[1,1,1,1,1,1];
-    let obj={
-        image:"https://images.meesho.com/images/products/61634031/1cyvh_400.jpg",
-        name:"Chanvi Supirior sarre",
-        Price:203,
-        rating:4.4
-    }
+    const dispatch=useDispatch()
+    const products:any=useSelector((state:any)=>{
+        return state.productReducer.products
+    })
+    const {type}=useParams()
+    const location=useLocation()
+    useEffect(()=>{
+       // dispatch({type: 'GET_PRODUCTS_RESPONSE_SUCCESS', payload: Array(64)})
+       
+        dispatch(Get_Data_from_API(type))
+    },[location])
+    console.log(location)
   return (
     <div className='ProductsBar'>
         {
-            arr.map((e)=>{
-                return <OnlyProduct {...obj} />
+            products?.map((e:Objprop)=>{
+                return <OnlyProduct key={e.id} {...e} />
             })
         }
        
