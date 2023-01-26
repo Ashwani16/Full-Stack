@@ -18,14 +18,14 @@ body {
 padding-top: 10px;
 animation: fading 1s forwards;
 position: absolute;
-background-color: azure;
+background-color: rgb(240, 248, 248);
 }
 @keyframes fading {
   0% { opacity: 0; }
   50% { opacity: 1; }
 }
 .nav2>div:hover, a:hover{
-
+  font-size: large;
   color: rgb(240, 29, 187);
 }
 .nav2{
@@ -43,6 +43,7 @@ background-color: azure;
   width: 150px;
    margin: auto;
 
+
 }
 .flex{
   display: flex;
@@ -56,7 +57,7 @@ code {
  
 }
 .smd >p:hover, a:hover{
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(221, 220, 220);
   border-radius: 7px;
 }
 .pink{
@@ -64,7 +65,9 @@ code {
 }
  
 .sb{
-background-color: aliceblue;
+
+border: 1px solid rgb(214, 214, 214);
+border-radius: 7px;
 margin-top: 20px;
 width: 20%;
 height: 400px;
@@ -72,18 +75,38 @@ padding: 10px;
 text-align: left;
 margin-left: 30px;
 }
+.h1{
+  font-size: 30px;
+}
+.small_Text{
+  font-size: small;
+}
 .option{
   text-align: left;
   padding: 10px;
-  width: 160px;
+  width: 100%;
+  color: rgb(58, 53, 53);
+  background-color: rgb(250, 250, 250);
+}
+.ProductsBar{
+  background-color: beige;
+  width: 70%;
+ 
+  margin: auto;
+  margin-left: 30px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
 }
 .option:hover{
 
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(240, 250, 250);
 }
 .filter{
   padding-top: 10px;
 }
-.pb{
-
+.sp{
+  padding: 10px;
+  background-color: aquamarine;
 }
