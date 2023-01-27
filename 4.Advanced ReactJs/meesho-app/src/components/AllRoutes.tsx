@@ -11,7 +11,7 @@ function Allroutes(){
     return <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/products/:type" element={<Products/>}/>
-      <Route path="/product/:id" element={<Single_Product/>} />
+      <Route path="/product/:type/:id" element={<Single_Product/>} />
       <Route path="/cart" element={<Cart/>} /> 
       <Route path="/address" element={<Address/>} />
       <Route path="/payment" element={<Payment/>} />
