@@ -5,7 +5,7 @@ type Initial_StateProps={
     toatal_Count:number,
     toatal_Amount:number
 }
-const initial_State:Initial_StateProps={
+var initial_State:Initial_StateProps={
     cart:[],
     toatal_Count:0,
     toatal_Amount:0
@@ -23,7 +23,7 @@ export const reducer=(state=initial_State,action:ActionProps)=>{
             arr.forEach((e,i) => {
                 if(e.id===action.payload.id){
                     c=true;
-                    arr[i].quantity++
+                    arr[i].quantity=arr[i].quantity+1
                 }
             });
             if(c){

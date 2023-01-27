@@ -26,6 +26,10 @@ const addToCartHandler=()=>{
     dispatch(AddToCart(product))
     
 }
+const buyNowHandler=()=>{
+    dispatch(AddToCart(product))
+    navigate("/address")
+}
     return <div className="sigleProductCard">
             <div className="smallImage">
             <img src={product?.img1}/>    
@@ -35,7 +39,7 @@ const addToCartHandler=()=>{
             <Divider /> 
                 <div className="flex1">
                     <button onClick={addToCartHandler} className="button"><AiOutlineShoppingCart /> Add to Cart</button>
-                    <button className="button pinkbutton"><BiRightArrow/> Buy Now</button>
+                    <button onClick={buyNowHandler} className="button pinkbutton"><BiRightArrow/> Buy Now</button>
                 </div> 
                 <Divider /> 
             </div>
