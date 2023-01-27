@@ -44,19 +44,19 @@ const buyNowHandler=()=>{
                 <Divider /> 
             </div>
             <div className="Single_Product_Details">
-            <div className="left border"><p className='name'>{product?.name}</p>
+            <div className="left border descwidth"><p className='name'>{product?.name}</p>
         <h1 className="price">{product?.price}</h1>
         <div className='rating'><p >{product?.rating} ✩</p></div>
         <button className='freedel' disabled>Free Delivery</button>
         </div>
-        <div className="left border">
+        <div className="left border descwidth">
             <h1 className=' price'>Select Size</h1>
             <div className='rating size'><p >small</p></div>
             <div className='rating size'><p >mediume</p></div>
             <div className='rating size'><p >large</p></div>
             <div className='rating size'><p >x-large</p></div>
         </div>
-        <div className="left border">
+        <div className="left border descwidth">
             <h1 className=' price'>Product Details</h1>
             <p>Name :{product?.name}</p>
             <p>Fabric:Denim</p>

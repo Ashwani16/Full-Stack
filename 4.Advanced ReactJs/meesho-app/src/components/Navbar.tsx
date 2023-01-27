@@ -11,10 +11,13 @@ const Navbar=()=>{
   const cartClickHandler=()=>{
     navigate("/cart")
   }
+  const homeClickHandler=()=>{
+    navigate("/")
+  }
     return <div className="navbar" style={{position: "sticky"}}>
        <Center justifyContent='space-between' >
   <Center width='50%'  >
-    <Image height='60px' src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' width='23%'/>
+    <Image onClick={homeClickHandler} height='60px' src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' width='23%'/>
     <Stack width='60%' >
   <InputGroup  border='1px solid grey' borderRadius='3px' bg='white' width='100%'>
     <InputLeftElement
