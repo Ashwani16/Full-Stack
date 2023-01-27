@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Add_View_Product } from '../redux/allProducts/action'
 import "./OnlyProduct.css"
 import {Objprop} from "./ProductsBar"
@@ -9,9 +9,11 @@ interface OnlyProductProps extends Objprop{}
 export const OnlyProduct = (product:OnlyProductProps) => {
   const dispatch=useDispatch();
   const navigate=useNavigate();
+  const {type}=useParams()
+  
 const clickHandler=()=>{
     dispatch(Add_View_Product(product))
-    navigate(`/product/${product.id}`)
+    navigate(`/product/${type}/${product.id}`)
 }
     return (
     <div onClick={clickHandler} className='sp single'>

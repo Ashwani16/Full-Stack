@@ -29,7 +29,7 @@ export const ProductsBar = () => {
        
         dispatch(Get_Data_from_API(type))
     },[location])
-    console.log(location)
+    //console.log(location)
   return (
     <div className='ProductsBar'>
         {

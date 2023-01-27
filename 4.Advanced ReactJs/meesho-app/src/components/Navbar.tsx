@@ -1,12 +1,16 @@
 import { Box,Center,Stack, Square, Text } from "@chakra-ui/layout"
 import {PhoneIcon,PlusSquareIcon,CheckIcon, Search2Icon} from '@chakra-ui/icons'
 import { Flex,Image,Divider , InputLeftElement,InputGroup,InputRightElement,Input} from "@chakra-ui/react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import Navbar2 from "./Navbar2";
 
 const Navbar=()=>{
+  const navigate=useNavigate()
+  const cartClickHandler=()=>{
+    navigate("/cart")
+  }
     return <div className="navbar" style={{position: "sticky"}}>
        <Center justifyContent='space-between' >
   <Center width='50%'  >
@@ -35,7 +39,7 @@ const Navbar=()=>{
         <CgProfile />
         <Text> Profile</Text>
     </Center>
-    <Center gap='5px'>
+    <Center onClick={cartClickHandler} gap='5px'>
         <AiOutlineShoppingCart/>
         <Text>Cart</Text>
     </Center>
