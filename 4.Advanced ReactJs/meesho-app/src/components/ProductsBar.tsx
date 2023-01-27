@@ -15,7 +15,8 @@ export type Objprop={
     quantity:number
     rating:number
     reviews:string;
-    size:any
+    size:any;
+    writable:true;
 }
 export const ProductsBar = () => {
     const dispatch=useDispatch()

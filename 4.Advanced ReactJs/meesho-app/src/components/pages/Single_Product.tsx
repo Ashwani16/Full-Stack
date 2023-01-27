@@ -26,6 +26,10 @@ const addToCartHandler=()=>{
     dispatch(AddToCart(product))
     
 }
+const buyNowHandler=()=>{
+    dispatch(AddToCart(product))
+    navigate("/address")
+}
     return <div className="sigleProductCard">
             <div className="smallImage">
             <img src={product?.img1}/>    
@@ -35,24 +39,24 @@ const addToCartHandler=()=>{
             <Divider /> 
                 <div className="flex1">
                     <button onClick={addToCartHandler} className="button"><AiOutlineShoppingCart /> Add to Cart</button>
-                    <button className="button pinkbutton"><BiRightArrow/> Buy Now</button>
+                    <button onClick={buyNowHandler} className="button pinkbutton"><BiRightArrow/> Buy Now</button>
                 </div> 
                 <Divider /> 
             </div>
             <div className="Single_Product_Details">
-            <div className="left border"><p className='name'>{product?.name}</p>
+            <div className="left border descwidth"><p className='name'>{product?.name}</p>
         <h1 className="price">{product?.price}</h1>
         <div className='rating'><p >{product?.rating} ✩</p></div>
         <button className='freedel' disabled>Free Delivery</button>
         </div>
-        <div className="left border">
+        <div className="left border descwidth">
             <h1 className=' price'>Select Size</h1>
             <div className='rating size'><p >small</p></div>
             <div className='rating size'><p >mediume</p></div>
             <div className='rating size'><p >large</p></div>
             <div className='rating size'><p >x-large</p></div>
         </div>
-        <div className="left border">
+        <div className="left border descwidth">
             <h1 className=' price'>Product Details</h1>
             <p>Name :{product?.name}</p>
             <p>Fabric:Denim</p>

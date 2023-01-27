@@ -6,6 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.homeImg{
+width:70%;
+margin: auto;
+margin-top: 30px;
+margin-bottom: 40px;
+}
 .navbar{
   position: fixed;
   
@@ -172,4 +178,110 @@ border: solid rgb(221, 12, 204);
 }
 p{
   font-family: Book Antiqua
+}
+.cart{
+  text-align: left;
+  display:grid;
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  grid-template-columns: 2fr 1fr;
+  gap:10px
+
+}
+
+.singlecart{
+  display:flex;
+  padding: 5px;
+}
+.imgdiv{
+  padding: 5px;
+  width: 23%;
+}
+.imgdiv>img{
+  border-radius: 4px;
+}
+.detaildiv{
+  padding: 5px;
+}
+.bold1{
+  font-weight: 600;
+  padding: 5px;
+  padding-right: 10px;
+}
+.bold2{
+  font-weight: 700;
+}
+.spacebtw{
+  justify-content: space-between;
+  padding: 5px;
+}
+.width60{
+  width: 60%;
+  margin: auto;
+}
+.yeh{
+  text-align: center;
+  padding:10px;
+  margin: 5px;
+  color: rgb(27, 27, 112);
+  background-color: rgb(220, 232, 255);
+}
+.clinking{
+  text-align: center;
+  padding:5px;
+  margin: 5px;
+  border-radius:5px;
+  font-size: x-small;
+  color: rgb(27, 27, 112);
+  background-color: rgb(235, 235, 235);
+}
+.continue{
+  text-align: center;
+  padding:5px;
+  margin: 5px;
+  font-size: larger;
+  color: rgb(255, 254, 254);
+  background-color: rgb(255, 0, 157);
+}
+.bold{
+  font-size: larger;
+}
+
+.maindiv{
+  width: 65%;
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+.left{
+   width:50%
+}
+.maindiv2{
+   width: 100%;
+   display: flex;
+   margin: auto;
+   margin-top: 50px;
+   justify-content: space-evenly;
+}
+.width30{
+  width: 35%;
+}
+.width65{
+  text-align: left;
+  width: 55%;
+  padding: 30px;
+}
+.input1 {
+  outline: 0;
+  width: 100%;
+  margin: 10px;
+  margin-top:20px ;
+  border-width: 0 0 2px;
+  border-color: rgb(236, 235, 235)
+}
+.marginTop{
+  margin-top: 30px;
+  padding: 20px;
 }

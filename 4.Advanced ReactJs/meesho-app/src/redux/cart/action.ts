@@ -7,13 +7,13 @@ export const AddToCart=(payload:Objprop)=>{
         payload
     }
 }
-export const RemoveFromCart=(payload:string)=>{
+export const RemoveFromCart=(payload:Objprop)=>{
     return {
         type:REMOVE_FROM_CART,
         payload
     }
 }
-export const DecrementCartCount=(payload:string)=>{
+export const DecrementCartCount=(payload:Objprop)=>{
     return {
         type:DECREMENT_CART_COUNT,
         payload
