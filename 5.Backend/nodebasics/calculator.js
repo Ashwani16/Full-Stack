@@ -1,4 +1,11 @@
-//console.table([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }]);
+console.table([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }]);
+//┌─────────┬─────┬─────┐
+//│ (index) │  a  │  b  │
+//├─────────┼─────┼─────┤
+//│    0    │  1  │ 'Y' │
+//│    1    │ 'Z' │  2  │
+//└─────────┴─────┴─────┘
+
 const argument=process.argv
 console.log(argument)
 switch(argument[2]){

@@ -1,0 +1,20 @@
+{
+    "students": [
+        {
+            "name": "student1",
+            "class": "class1"
+        },
+        {
+            "name": "student2",
+            "class": "class2"
+        },
+        {
+            "name": "student3",
+            "class": "class3"
+        },
+        {
+            "name": "student31",
+            "class": "class43"
+        }
+    ]
+}
