@@ -1,0 +1,18 @@
+{
+    "students": [
+        {
+            "roll_no": 1,
+            "name": "Student 1",
+            "location": "new DElhi",
+            "course": "FSD"
+        }
+    ],
+    "teachers": [
+        {
+            "emp_id": 1,
+            "name": "Techer1",
+            "sub": "math",
+            "exp": 5
+        }
+    ]
+}

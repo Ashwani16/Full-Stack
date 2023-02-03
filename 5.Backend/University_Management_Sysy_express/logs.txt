@@ -1,0 +1,70 @@
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: DELETE, Route: /student/7, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877d&role=admin, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=teacher, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=teacher, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=teacher, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=student, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=student, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=student, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=student, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=student, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=teacher, user-agent: 
+
+ Method: PATCH, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: DELETE, Route: /student/2?password=7877&role=admin, user-agent: 
+
+ Method: GET, Route: /student, user-agent: 
+
+ Method: GET, Route: /student, user-agent:Thunder Client (https://www.thunderclient.com)
