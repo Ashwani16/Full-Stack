@@ -1,0 +1,25 @@
+body {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    color: red;
+    font-size: 36px;
+    text-shadow: 2px 2px #ffc0cb;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+  }
