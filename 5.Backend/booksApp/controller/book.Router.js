@@ -11,7 +11,7 @@ bookRouter.get(`/`,async(req,res)=>{
         res.send("There are some error")
     }
 })
-bookRouter.post(`/add`,async(req,res)=>{
+bookRouter.post("/add",async(req,res)=>{
     let obj=req.body;
     try {
          data= new BookModel(obj)
@@ -25,8 +25,8 @@ bookRouter.patch(`/update/:id`,async(req,res)=>{
     let {id}=req.params;
     let obj=req.body;
     try {
-         BookModel.findByIdAndUpdate(id,obj)
-         res.send(data)
+         await BookModel.findByIdAndUpdate(id,obj)
+         res.send("updated")
     } catch (error) {
         res.send("There are some error")
     }
@@ -34,19 +34,21 @@ bookRouter.patch(`/update/:id`,async(req,res)=>{
 bookRouter.delete(`/delete/:id`,async(req,res)=>{
     let {id}=req.params;
     try {
-         BookModel.findByIdAndDelete(id)
-         res.send(data)
+         await BookModel.findByIdAndDelete(id)
+         res.send("deleted")
     } catch (error) {
         res.send("There are some error")
     }
 })
-bookRouter.post(`/replace/:id`,async(req,res)=>{
+bookRouter.put(`/replace/:id`,async(req,res)=>{
     let {id}=req.params;
     let obj=req.body;
     try {
-         BookModel.findOneAndReplace({_id:id},obj)
-         res.send(data)
+         await BookModel.findOneAndReplace({_id:id},obj)
+         res.send("replaced")
     } catch (error) {
         res.send("There are some error")
     }
 })
+
+module.exports={bookRouter}

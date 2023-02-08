@@ -1,9 +1,11 @@
 const fs=require("fs")
-function record(req,res,next){
+async function record(req,res,next){
     let m=req.method
-    if(m==="POST"||m==="PATCH"||m==="DELETE"){
+    // let (id)=req.params
+    // console.log(id)
+    if(m==="PUT"||m==="PATCH"||m==="DELETE"){
        try {
-    fs.writeFileSync("./record.json",`The document with id:${req.params.id} has been ${m==="DELETE"?"deleted":updated}.`)
+     await fs.writeFileSync("./record.txt",`The document with id:${req.param.id} has been ${m==="DELETE"?"deleted":"updated"}.\n`)
 
        } catch (error) {
         console.log("error in records file")
