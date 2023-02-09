@@ -1,14 +1,16 @@
 const {Router} =require("express");
 const { UserModel } = require("../model/user.model");
+const jwt=require("jsonwebtoken")
 
 const loginRouter=Router();
 
 loginRouter.post("/",async(req,res)=>{
-    let obj=req.body;
+    let {user_name,pass}=req.headers;
+    
     try {
-        const user=new UserModel(obj)
+        const user=new UserModel({user_name,pass})
         await user.save();
-        res.send("logedin")
+        res.send("loged in")
     } catch (error) {
         res.send("some error in login")
     }
