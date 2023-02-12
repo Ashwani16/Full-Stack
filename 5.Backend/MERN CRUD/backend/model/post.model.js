@@ -6,3 +6,4 @@ const post_Schema=mongoose.Schema({
     device:String
 })
 const PostModel=mongoose.model("post",post_Schema)
+module.exports={PostModel}
